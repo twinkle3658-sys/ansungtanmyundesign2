@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자매품 및 특별판</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #EAE4DA; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto; 
+            font-family: 'NotoSansKR-VariableFont_wght', sans-serif;
+            box-sizing: border-box;
+            padding: 60px 0; 
+        }
+
+       
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            margin-right: -4px;
+            box-sizing: border-box;
+            transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, height 0.4s ease;
+        }
+        .card-link:last-child {
+            margin-right: 0;
+        }
+
+        
+        .title-container {
+            position: absolute;
+            top: 5vh;
+            left: 5vw;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .archive-title {
+            color: #F7810A; 
+            font-size: 4vw;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin: 0;
+            line-height: 1;
+        }
+        .accordion-wrapper {
+            display: flex;
+            width: 90vw;
+            height: 55vh;
+            min-height: 380px; 
+            margin-top: 12vh;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border: 4px solid #F7810A; 
+            overflow: hidden;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 82%;
+            object-fit: contain;
+            padding: 20px;
+            box-sizing: border-box;
+            filter: grayscale(100%); 
+            background-color: #fff;
+            transition: filter 0.4s ease;
+        }
+
+        .card .year-label {
+            height: 18%;
+            border-top: 4px solid #F7810A;  
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 900;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -0.5px;
+            box-sizing: border-box;
+            padding: 0 10px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background-color 0.3s ease;
+        }
+
+        
+        .card.sister-product .year-label {
+            background-color: #D66F08; 
+        }
+        .card.special-edition .year-label {
+            background-color: #D66F08; 
+        }
+
+        
+        .accordion-wrapper:hover .card-link:hover {
+            flex: 3.5; 
+        }
+        .accordion-wrapper:hover .card-link:hover img {
+            filter: grayscale(0%);
+        }
+
+        
+        .accordion-wrapper:hover .card-link:hover .card.sister-product .year-label {
+            background-color: #D66F08; 
+        }
+        .accordion-wrapper:hover .card-link:hover .card.special-edition .year-label {
+            background-color: #D66F08; 
+        }
+
+        
+        .accordion-wrapper:hover .card-link:not(:hover) {
+            flex: 0.5;
+            opacity: 0.4; 
+        }
+
+        
+        @media (max-width: 1024px) {
+            body {
+                justify-content: flex-start; 
+                padding: 40px 0;
+            }
+            .title-container {
+                position: relative; 
+                top: 0;
+                left: 0;
+                align-items: center;
+                margin-bottom: 40px;
+                width: 100%;
+            }
+            .archive-title {
+                font-size: 32px; 
+                margin-bottom: 8px;
+            }
+            .archive-subtitle {
+                font-size: 15px;
+            }
+            .accordion-wrapper {
+                flex-direction: column;
+                height: auto; 
+                min-height: auto;
+                width: 85vw;
+                margin-top: 0;
+            }
+            .card-link {
+                margin-right: 0;
+                margin-bottom: -4px;
+                flex-direction: column;
+                height: 150px; 
+                flex: none !important; 
+            }
+            .card-link:last-child {
+                margin-bottom: 0;
+            }
+            .card img {
+                height: 72%;
+                padding: 15px;
+            }
+            .card .year-label {
+                height: 28%;
+                font-size: 15px;
+            }
+            
+            
+            .accordion-wrapper:hover .card-link:hover {
+                height: 200px; 
+            }
+            .accordion-wrapper:hover .card-link:not(:hover) {
+                height: 130px; 
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-container">
+        <h1 class="archive-title">자매품 및 특별판</h1>
+    </div>
+
+    <div class="accordion-wrapper">
+        <a href="https://www.nongshim.com/management/people/contribution_activity_view?groupCode=003&groupId=445" target="_blank" class="card-link">
+            <div class="card sister-product">
+                <img src="images/h.png" alt="해물">
+                <div class="year-label">
+                    <span>2018</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://youtu.be/RlcFrCUx-0E?si=-m1z9KyxWh-A1Ulx" target="_blank" class="card-link">
+            <div class="card special-edition">
+                <img src="images/special1.png" alt="3.1운동">
+                <div class="year-label">
+                    <span>2019</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://youtu.be/ZiDyMtvce4E?si=UAt7PkKWn6z8k2sv" target="_blank" class="card-link">
+            <div class="card special-edition">
+                <img src="images/special2.png" alt="강호동">
+                <div class="year-label">
+                    <span>2020</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://youtu.be/kcLNrlvpV8M?si=WzkP2UFyU81KnMT_" target="_blank" class="card-link">
+            <div class="card sister-product">
+                <img src="images/s.png" alt="순하군">
+                <div class="year-label">
+                    <span>2023</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</body>
+</html>
